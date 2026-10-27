@@ -8,6 +8,8 @@ Bhawana Gupta, Senior Product Manager, IBM Engineering
 
 <img src="images/cover.png" alt="Lab 1376 cover" width="420">
 
+**🌐 Lab website:** [brettscharm.github.io/lab-1376-elm-everywhere](https://brettscharm.github.io/lab-1376-elm-everywhere/) · **📄 Original PDF:** [Lab-1376-ELM-everywhere.pdf](Lab-1376-ELM-everywhere.pdf)
+
 > **How to use this page:** every prompt you send to Bob is in a grey box. Hover over the box and click the **copy** icon in its top-right corner, then paste into Bob.
 
 ---
@@ -607,7 +609,7 @@ This section provides information about getting help with your lab and some comm
 
 ## Notices and disclaimers
 
-<details>
+<details markdown="1">
 <summary>Click to expand</summary>
 
 © 2026 International Business Machines Corporation. No part of this document may be reproduced or transmitted in any form without written permission from IBM.

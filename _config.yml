@@ -1,0 +1,17 @@
+title: "Lab 1376 — ELM everywhere"
+description: "Hands-on lab: Engineering AI Hub MCP tools with IBM Bob, with copy-paste prompts"
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+exclude:
+  - .git

@@ -171,10 +171,8 @@ Using Engineering AI Hub MCP tools and IBM Bob, you will:
 1. Ask Bob:
 
    ```text
-   Give me a list of configurations of Hummingbird component in Aviary requirements.
+   Give me a list of configurations of .
    ```
-
-   > **Note:** The printed lab guide reads *"Give me a list of configurations of ."* with the component name left blank. The prompt above fills in the component named in step 3.4.
 
 2. Review the available configurations.
 3. Identify:

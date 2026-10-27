@@ -47,7 +47,7 @@ Engineering teams work with critical information across requirements, work items
 
 A key capability of Engineering AI Hub is its support for Model Context Protocol (MCP) tools. MCP tools provide standardized interfaces that allow AI assistants and agents to interact with trusted ELM data using natural language. They surface engineering artifacts such as requirements, work items, models, and test assets, together with the lifecycle context and relationships that connect them. This means an AI assistant can do more than retrieve an individual artifact. It can access the engineering context needed to understand how artifacts relate across the lifecycle, for example, how a requirement relates to a work item or test. MCP tools provide a governed and reusable foundation for AI-assisted engineering workflows. They build on existing ELM authentication, permissions, and access controls, so organizations do not need to establish a separate security and governance model for AI interactions.
 
-The MCP capabilities used in this lab cover four broad categories:
+The MCP capabilities used in this lab will cover four broad categories:
 
 <img src="images/mcp-capabilities.png" alt="MCP capabilities: Discover, Analyze, Act, Automate across Requirements, Models, Work Items and Test artifacts" width="420">
 
@@ -59,7 +59,7 @@ In this lab, you will use IBM Bob as the MCP-compatible AI assistant. However, t
 
 Using Bob, you will work with sample ELM data across multiple project areas.
 
-The lab has four guided scenarios in which you will investigate a defect, review the health of a sprint, and investigate the readiness of a release for safety certification and compliance.
+The lab has four guided scenarios in which you will investigate a defect, review health of a sprint, investigate the readiness of a release for safety certification and compliance.
 
 You will then use the additional tasks to explore different ways of interacting with ELM data across the four sample project areas.
 
@@ -79,20 +79,20 @@ By the end of this lab, you will be able to:
 
 Before beginning the lab, ensure that:
 
-1. You give the servers 20 minutes to start. Refresh the dashboard to see that all servers are up and running.
-2. You are able to log in to IBM Engineering Lifecycle Management (ELM) in the browser.
-   1. Open Edge using the shortcut.
-   2. Select **DOORS Next** from the shortcut in the bookmark toolbar.
-3. You are able to log in to IBM Bob.
-   1. Confirm that you are in the `.bob` workspace.
+1. You give the servers 20 minutes to start. You should refresh the dashboard to see all servers are up and running.
+2. You are able to login into IBM Engineering Lifecycle Management (ELM) in the browser
+   1. Open Edge using the shortcut
+   2. Select DOORS Next from the shortcut in the bookmark toolbar
+3. You are able to login into IBM Bob
+   1. Confirm that you are in the `.bob` workspace
 
    <img src="images/bob-workspace.png" alt="Bob Explorer showing the .bob workspace with mcp.json" width="380">
 
-4. You are connected to the MCP server in IBM Bob.
-   1. Open IBM Bob.
-   2. Click the gear icon to open **Settings**.
-   3. Select **MCP servers** from the navigation.
-   4. **elm-techzone** should show as **Connected**.
+4. You are connected to the MCP server in IBM Bob
+   1. Open the IBM Bob
+   2. Click on the gear icon to open the Settings
+   3. Select the MCP servers from the navigation
+   4. The elm-techzone should show as connected
 
    <img src="images/bob-mcp-connected.png" alt="Bob MCP servers list showing elm-techzone connected" width="440">
 
@@ -100,13 +100,13 @@ Before beginning the lab, ensure that:
 
 ## 3 Scenario 1: Investigate and fix a defect
 
-In this guided scenario, you are a developer who will investigate a defect in the Hummingbird sub-system related to low-altitude return-to-base behavior. During the investigation, you discover the cause of the issue, fix the issue, and provide an update of the change.
+In this guided scenario, you are a developer who will investigate a defect in the Hummingbird sub-system related to low-altitude return-to-base behavior. During the investigation, you discover that the cause of the issue, fix the issue, and provide an update of the change.
 
 Using Engineering AI Hub MCP tools and IBM Bob, you will:
 
 ![Scenario 1 flow: Understand defect → Perform impact analysis → Identify code changes → Communicate changes → Identify test impact](images/scenario1-flow.png)
 
-### 3.1 Connect to the MCP server
+### 3.1 Discovering the defect
 
 1. In Bob, enter:
 
@@ -114,15 +114,15 @@ Using Engineering AI Hub MCP tools and IBM Bob, you will:
    I would like to work with IBM ELM tools using MCP tools. connect to elm-techzone mcp server
    ```
 
-2. Click the link given to refresh the Personal Access Token.
+2. Click on link given to refresh the Personal Access Token.
 
    <img src="images/pat-refresh.png" alt="Bob response with a link to refresh the access token" width="460">
 
-3. You may need to quit Bob and reopen it.
+3. You may need to quit Bob and reopen Bob again.
 
 ### 3.2 Discovering the defect
 
-1. Start by getting open defects:
+1. Start with getting open defects:
 
    ```text
    Get all work items of type defect in project Hummingbird SAFe - ART assigned to user IBM.
@@ -149,17 +149,12 @@ Using Engineering AI Hub MCP tools and IBM Bob, you will:
    ```
 
 2. Review the returned requirements.
-3. Identify requirement **6733**.
+3. Identify requirement 6733.
 4. Confirm that the requirement is linked to the defect.
 
 ### 3.4 Retrieving the requirement
 
-1. Ask Bob:
-
-   ```text
-   List the configurations of Hummingbird component in Aviary requirements
-   ```
-
+1. List the configurations of Hummingbird component in Aviary requirements
 2. Ask Bob:
 
    ```text
@@ -179,10 +174,12 @@ Using Engineering AI Hub MCP tools and IBM Bob, you will:
    Give me a list of configurations of Hummingbird component in Aviary requirements.
    ```
 
+   > **Note:** The printed lab guide reads *"Give me a list of configurations of ."* with the component name left blank. The prompt above fills in the component named in step 3.4.
+
 2. Review the available configurations.
 3. Identify:
    - Hummingbird requirements base Initial Stream
-   - Hummingbird 2.0
+   - Humming bird 2.0
 4. Use these configurations in the next step.
 
 ### 3.6 Analyzing the requirement change
@@ -195,12 +192,12 @@ Using Engineering AI Hub MCP tools and IBM Bob, you will:
 
 2. Approve the MCP request if prompted.
 3. Review the comparison.
-4. Identify the change from **20 feet → 30 feet**.
+4. Identify the change from: 20 feet → 30 feet
 5. Determine that the engineering requirement has changed.
 
 ### 3.7 Analyzing the implementation
 
-1. Open the file `requirements.py` in the `.bob` folder.
+1. Open file `requirements.py` in `.bob` folder
 
    <img src="images/open-requirements-py.png" alt="Open File dialog showing requirements.py in the .bob folder" width="460">
 
@@ -444,7 +441,7 @@ In this guided scenario, you will prepare for an executive briefing ahead of a r
 
 ## 7 Additional hands-on exercises
 
-Now that you have completed the guided exercises, take some time to explore additional scenarios using the prompts in this section. These exercises are designed to reinforce your understanding of MCP-enabled workflows by allowing you to investigate engineering data from different perspectives. Use these exercises to build confidence with the experience, discover new investigation techniques, and better understand the value of cross-domain engineering insights.
+Now, that you have completed the guided exercise, take some time to explore additional scenarios using the prompts in this section. These exercises are designed to reinforce your understanding of MCP-enabled workflows by allowing you to investigate engineering data from different perspectives. Use these exercises to build confidence with the experience, discover new investigation techniques, and better understand the value of cross-domain engineering insights.
 
 ### 7.1 Connect to the MTM Planning project
 
@@ -498,7 +495,7 @@ Find requirements related to "loan" or "credit". For each requirement found, che
 **Prompt:**
 
 ```text
-Find all open defects in MTM Planning that have no linked requirements. These are orphan defects with no traceability back to a business need. List them with their summary, priority, and owner. Explain what the lack of requirement traceability might mean from a process quality perspective.
+Find all open defects in MTM Planning that have no linked requirements. These are orphan defects with no traceability back to a business need. List them a with their summary, priority, and owner. Explain what the lack of requirement traceability might mean from a process quality perspective.
 ```
 
 **User value:** Improves governance and audit readiness.
@@ -547,30 +544,30 @@ This section provides information about getting help with your lab and some comm
 
 ### 8.1 Personal Access Token (PAT) is unable to refresh
 
-1. Generate a new Personal Access Token (PAT):
-   1. Log in to the [IBM Engineering AI Hub console](https://aihub.mycluster.com/console) using the lab credentials `ibm` / `ibm`.
-   2. Open the navigation menu and click **Token management**.
-   3. Click **Generate token** to open the creation window.
-   4. Enter a descriptive name in the **Token name** field.
-   5. Click **Generate** to create the token.
-   6. Copy the generated token value immediately and store it securely, as it is displayed only once.
+1. Generate new Personal Access Token (PAT):
+   1. Log in to the [IBM Engineering AI Hub console](https://aihub.mycluster.com/console) using credentials `ibm/ibm`.
+   2. Open the navigation menu and click on Token management.
+   3. Click Generate token to open the creation window.
+   4. Enter a descriptive name in the Token name field.
+   5. Click Generate to create the token.
+   6. Copy the generated token value immediately and store it securely, as it is displayed only once
 2. Update the `mcp.json` file in IBM Bob:
-   1. Open IBM Bob.
-   2. Click the gear icon to open **Settings**.
-   3. Select **MCP servers** from the navigation.
-   4. Click **elm-techzone** in the list of MCP servers.
-   5. Click the **Edit** icon in the top-right to edit `mcp.json`.
-   6. Replace the existing bearer token with the PAT you just generated.
-   7. Save the file.
+   1. Open the IBM Bob
+   2. Click on the gear icon to open the Settings
+   3. Select the MCP servers from the navigation
+   4. Click on elm-techzone from the list of MCP servers
+   5. Click on the Edit icon in top-right to edit the `mcp.json`
+   6. Update the existing bearer token with the PAT you just generated.
+   7. Save the file
 
 ### 8.2 Need to update the mcp.json file
 
-1. Open IBM Bob.
-2. Click the gear icon to open **Settings**.
-3. Select **MCP servers** from the navigation.
-4. Click **elm-techzone** in the list of MCP servers.
-5. Click the **Edit** icon in the top-right to edit `mcp.json`.
-6. Replace the existing file contents with the text in this file:
+1. Open the IBM Bob
+2. Click on the gear icon to open the Settings
+3. Select the MCP servers from the navigation
+4. Click on elm-techzone from the list of MCP servers
+5. Click on the Edit icon in top-right to edit the `mcp.json`
+6. Update the existing file contents with the text in file
 
    ```text
    C:\Users\itzuser-m01g\Documents\Lab 1376\mcp.json
@@ -578,7 +575,7 @@ This section provides information about getting help with your lab and some comm
 
    ![Lab 1376 folder containing mcp.json and requirements.py](images/mcp-json-location.png)
 
-7. Save the file.
+7. Save the file
 
 ### 8.3 Unable to find requirements.py in your workspace
 
@@ -597,13 +594,15 @@ This section provides information about getting help with your lab and some comm
 
 ## 9 Learn more
 
-1. [MCP tools provided by Engineering AI Hub](https://www.ibm.com/docs/en/engineering-ai-hub/1.3.0?topic=engineering-ai-hub-mcp-tools)
-2. [List of tools available in Engineering AI Hub](https://www.ibm.com/docs/en/engineering-ai-hub/1.3.0?topic=tools-mcp)
+1. Read more about MCP Tools provided by Engineering AI Hub:
+   <https://www.ibm.com/docs/en/engineering-ai-hub/1.3.0?topic=engineering-ai-hub-mcp-tools>
+2. View list of tools available in Engineering Ai Hub:
+   <https://www.ibm.com/docs/en/engineering-ai-hub/1.3.0?topic=tools-mcp>
 3. Article: [From Requirements to engineering insights: AI-assisted Requirements Management with Engineering AI Hub 1.3 MCP Tools](https://jazz.net/library/article/98835)
 4. Article: [Beyond queries: AI-assisted Work Item Management with Engineering AI Hub 1.3 MCP Tools](https://jazz.net/library/article/98823)
 5. Article: [AI-assisted Test Management with Engineering AI Hub 1.3 MCP Tools](https://jazz.net/library/article/98798)
 6. Article: [AI-assisted model exploration using Rhapsody SE MCP tools in Engineering AI Hub 1.3](https://jazz.net/library/article/98897)
-7. Article: [Context-aware change validation using EWM MCP tools in Engineering AI Hub 1.3](https://jazz.net/library/article/99062)
+7. Article: [Context-aware change validation using EWM MCP tools in Engineering Ai Hub 1.3](https://jazz.net/library/article/99062)
 
 ---
 

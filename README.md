@@ -6,9 +6,13 @@ Hands-on lab guide · IBM TechXchange 2026
 
 Bhawana Gupta, Senior Product Manager, IBM Engineering
 
-<img src="images/cover.png" alt="Lab 1376 cover" width="420">
+<p align="center"><img src="images/cover.png" alt="Lab 1376 cover" width="420"></p>
 
-**🌐 Lab website:** [brettscharm.github.io/lab-1376-elm-everywhere](https://brettscharm.github.io/lab-1376-elm-everywhere/) · **📄 Original PDF:** [Lab-1376-ELM-everywhere.pdf](Lab-1376-ELM-everywhere.pdf)
+<p align="center" class="lab-buttons">
+  <a href="https://brettscharm.github.io/lab-1376-elm-everywhere/"><img src="https://img.shields.io/badge/Open_the_lab_website-0f62fe?style=for-the-badge" alt="Open the lab website" height="48"></a>
+  <a href="Lab-1376-ELM-everywhere.pdf"><img src="https://img.shields.io/badge/Open_PDF-161616?style=for-the-badge" alt="Open PDF" height="48"></a>
+  <a href="https://github.com/brettscharm/lab-1376-elm-everywhere/raw/main/Lab-1376-ELM-everywhere.pdf"><img src="https://img.shields.io/badge/Download_PDF-24a148?style=for-the-badge" alt="Download PDF" height="48"></a>
+</p>
 
 > **How to use this page:** every prompt you send to Bob is in a grey box. Hover over the box and click the **copy** icon in its top-right corner, then paste into Bob.
 

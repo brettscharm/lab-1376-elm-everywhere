@@ -55,19 +55,46 @@
   details { background: var(--surface); padding: 8px 16px; border-radius: 6px; font-size: 14px; color: var(--muted); }
   summary { cursor: pointer; font-weight: 500; color: var(--text); }
   li { margin: 4px 0; }
+  .cover { text-align: center; }
+  .cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin: 28px 0; }
+  .cta a { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-width: 240px;
+    padding: 16px 28px; border-radius: 8px; font-size: 18px; font-weight: 600; text-decoration: none;
+    border: 2px solid var(--accent); }
+  .cta a.solid { background: #0f62fe; border-color: #0f62fe; color: #fff; }
+  .cta a.solid:hover { background: #0043ce; border-color: #0043ce; color: #fff; }
+  .cta a.outline { color: var(--accent); background: transparent; }
+  .cta a.outline:hover { background: var(--surface); }
+  @media (max-width: 600px) {
+    .cta { flex-direction: column; gap: 12px; }
+    .cta a { width: 100%; min-width: 0; padding: 20px; font-size: 20px; }
+    header a.btn.pdf { display: none; }
+    h1 { font-size: 1.6rem; text-align: center; }
+  }
 </style>
 </head>
 <body>
 <header>
   <a class="name" href="#">Lab 1376 · ELM everywhere</a>
   <a class="btn" href="#table-of-contents">Contents</a>
-  <a class="btn primary" href="Lab-1376-ELM-everywhere.pdf" download>Download PDF</a>
+  <a class="btn primary pdf" href="Lab-1376-ELM-everywhere.pdf" download>Download PDF</a>
   <a class="btn" href="https://github.com/brettscharm/lab-1376-elm-everywhere">GitHub</a>
 </header>
 <main>
 {{ content }}
 </main>
 <script>
+  // Swap the README's plain website/PDF line for large centered PDF buttons, and center the cover.
+  document.querySelectorAll('main p').forEach(function (p) {
+    if (p.classList.contains('lab-buttons')) {
+      var cta = document.createElement('div');
+      cta.className = 'cta';
+      cta.innerHTML = '<a class="solid" href="Lab-1376-ELM-everywhere.pdf" target="_blank" rel="noopener">📄 Open PDF</a>' +
+        '<a class="outline" href="Lab-1376-ELM-everywhere.pdf" download>⬇️ Download PDF</a>';
+      p.replaceWith(cta);
+    } else if (p.querySelector('img[alt="Lab 1376 cover"]')) {
+      p.className = 'cover';
+    }
+  });
   // Match GitHub's heading anchors so the table-of-contents links work here too.
   document.querySelectorAll('main h1, main h2, main h3').forEach(function (h) {
     h.id = h.textContent.trim().toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu, '').replace(/\s/g, '-');

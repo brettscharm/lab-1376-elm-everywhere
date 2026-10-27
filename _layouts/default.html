@@ -67,34 +67,28 @@
   @media (max-width: 600px) {
     .cta { flex-direction: column; gap: 12px; }
     .cta a { width: 100%; min-width: 0; padding: 20px; font-size: 20px; }
-    header a.btn.pdf { display: none; }
+    .cta { margin-top: 4px; }
     h1 { font-size: 1.6rem; text-align: center; }
   }
+  /* The site has its own buttons at the top, so hide the README's GitHub-only badge row. */
+  main p.lab-buttons { display: none; }
+  main p[align="center"] { text-align: center; }
 </style>
 </head>
 <body>
 <header>
   <a class="name" href="#">Lab 1376 · ELM everywhere</a>
   <a class="btn" href="#table-of-contents">Contents</a>
-  <a class="btn primary pdf" href="Lab-1376-ELM-everywhere.pdf" download>Download PDF</a>
   <a class="btn" href="https://github.com/brettscharm/lab-1376-elm-everywhere">GitHub</a>
 </header>
 <main>
+<div class="cta">
+  <a class="solid" href="Lab-1376-ELM-everywhere.pdf" target="_blank" rel="noopener">📄 Open PDF</a>
+  <a class="outline" href="Lab-1376-ELM-everywhere.pdf" download>⬇️ Download PDF</a>
+</div>
 {{ content }}
 </main>
 <script>
-  // Swap the README's plain website/PDF line for large centered PDF buttons, and center the cover.
-  document.querySelectorAll('main p').forEach(function (p) {
-    if (p.classList.contains('lab-buttons')) {
-      var cta = document.createElement('div');
-      cta.className = 'cta';
-      cta.innerHTML = '<a class="solid" href="Lab-1376-ELM-everywhere.pdf" target="_blank" rel="noopener">📄 Open PDF</a>' +
-        '<a class="outline" href="Lab-1376-ELM-everywhere.pdf" download>⬇️ Download PDF</a>';
-      p.replaceWith(cta);
-    } else if (p.querySelector('img[alt="Lab 1376 cover"]')) {
-      p.className = 'cover';
-    }
-  });
   // Match GitHub's heading anchors so the table-of-contents links work here too.
   document.querySelectorAll('main h1, main h2, main h3').forEach(function (h) {
     h.id = h.textContent.trim().toLowerCase().replace(/[^\p{L}\p{N}\s_-]/gu, '').replace(/\s/g, '-');

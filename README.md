@@ -14,7 +14,7 @@ Bhawana Gupta, Senior Product Manager, IBM Engineering
   <a href="https://github.com/brettscharm/lab-1376-elm-everywhere/raw/main/Lab-1376-ELM-everywhere.pdf"><img src="https://img.shields.io/badge/Download_PDF-24a148?style=for-the-badge" alt="Download PDF" height="48"></a>
 </p>
 
-> **How to use this page:** every prompt you send to Bob is in a grey box. Hover over the box and click the **copy** icon in its top-right corner, then paste into Bob.
+> **How to use this page:** every prompt you send to Bob is in a grey box. Tap or click the **Copy** button in the box's top-right corner, then paste into Bob.
 
 ---
 
